@@ -10,3 +10,9 @@ function fetchData() {
             return data;
         })
 }
+
+fetchData()
+    .then((data) => {
+        displayData(data);
+    });
+

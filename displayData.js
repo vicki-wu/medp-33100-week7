@@ -113,23 +113,21 @@ class Ebook extends Book {
     }
 }
 
-const library = document.querySelector('.library');
 
-fetchData()
-    .then((data) => {
-        console.log(data);
-        for (let i = 0; i < books.length; i++) {
-            const bookEl = document.createElement('div');
-            const book = new Book(bookEl, data[i].name, data[i].author, data[i].numOfCopies);
-            library.appendChild(bookEl);
-        }
+function displayData(data) {
+    const library = document.querySelector('.library');
 
-        const textbookEl = document.createElement('div');
-        const textbook = new Textbook(textbookEl, "Textbook", "Teacher", 10);
-        library.appendChild(textbookEl);
+    for (let i = 0; i < books.length; i++) {
+        const bookEl = document.createElement('div');
+        const book = new Book(bookEl, data[i].name, data[i].author, data[i].numOfCopies);
+        library.appendChild(bookEl);
+    }
 
-        const ebookEl = document.createElement('div');
-        const ebook = new Ebook(ebookEl, "E-book", "Some author");
-        library.appendChild(ebookEl);
-    });
+    const textbookEl = document.createElement('div');
+    const textbook = new Textbook(textbookEl, "Textbook", "Teacher", 10);
+    library.appendChild(textbookEl);
 
+    const ebookEl = document.createElement('div');
+    const ebook = new Ebook(ebookEl, "E-book", "Some author");
+    library.appendChild(ebookEl);
+}
