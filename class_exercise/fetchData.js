@@ -1,3 +1,7 @@
+/*
+    Part 5: Fetch the JSON data using fetch()
+*/
+
 function fetchData() {
     return fetch('books.json')
         .then((response) => {
