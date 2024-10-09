@@ -21,7 +21,7 @@ class Book {
 
         this.element.classList.add('book');
 
-        this.updateElement();
+        this.renderElement();
 
         this.element.addEventListener('click', () => this.onClick());
     }
@@ -40,7 +40,7 @@ class Book {
         }
     }
 
-    updateElement() {
+    renderElement() {
         this.element.innerHTML = '';
 
         const titleElement = document.createElement('p');
@@ -87,7 +87,7 @@ class Textbook extends Book {
 /* 
 Part 4: Polymorphism
 
-Create a new class Ebook that doesn't display the number of available copies.
+Create a new class Ebook which extends Book, and displays only the title and author.
 */
 
 class Ebook extends Book {
@@ -97,7 +97,7 @@ class Ebook extends Book {
         this.element.classList.add('ebook');
     }
 
-    updateElement() {
+    renderElement() {
         this.element.innerHTML = '';
 
         const titleElement = document.createElement('p');
