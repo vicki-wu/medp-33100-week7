@@ -22,6 +22,7 @@
     font-size: 12px;
     width: 200px;
     height: 300px;
+    background-size: cover;
 }
 
 .book.disabled {
